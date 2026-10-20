@@ -29,14 +29,14 @@ namespace CalculatorApplication
 
             try
             {
-                double num1 = Convert.ToDouble(txtBoxInput1.Text);
-                double num2 = Convert.ToDouble(txtBoxInput2.Text);
-                char op = Convert.ToChar(cbOperator.SelectedItem);
-
+            double num1 = Convert.ToDouble(txtBoxInput1.Text);
+            double num2 = Convert.ToDouble(txtBoxInput2.Text);
+            char op = Convert.ToChar(cbOperator.SelectedItem);
+            
                 Formula<double> formula;
                 switch (op)
                 {
-                    case '+':
+                case '+':
                         formula = new Formula<double>(cal.getSum);
                         break;
                     case '-':
@@ -48,8 +48,8 @@ namespace CalculatorApplication
                     case '/':
                         formula = new Formula<double>(cal.getQuotient);
                         break;
-                    default:
-                        throw new InvalidOperationException("Invalid operator.");
+                default:
+                    throw new InvalidOperationException("Invalid operator.");
 
                 }
                 cal.CalculateEvent += formula;
