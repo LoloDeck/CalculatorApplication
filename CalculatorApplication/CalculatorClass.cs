@@ -9,8 +9,8 @@ namespace CalculatorApplication
     public delegate T Formula<T>(T num1, T num2);
     class CalculatorClass
     {
-        public Formula<double> info ;
-
+        public Formula<double> info;
+        
         public event Formula<double> CalculateEvent
         {
             add 

@@ -19,8 +19,8 @@ namespace CalculatorApplication
             }
         }
 
-        private void btnEqual_Click(object sender, EventArgs e)
-        {
+           private void btnEqual_Click(object sender, EventArgs e)
+            {
             if (cbOperator.SelectedItem == null)
             {
                 MessageBox.Show("Please select an operator.");
@@ -29,27 +29,27 @@ namespace CalculatorApplication
 
             try
             {
-                double num1 = Convert.ToDouble(txtBoxInput1.Text);
-                double num2 = Convert.ToDouble(txtBoxInput2.Text);
-                char op = Convert.ToChar(cbOperator.SelectedItem);
-
+            double num1 = Convert.ToDouble(txtBoxInput1.Text);
+            double num2 = Convert.ToDouble(txtBoxInput2.Text);
+            char op = Convert.ToChar(cbOperator.SelectedItem);
+            
                 Formula<double> formula;
                 switch (op)
                 {
-                    case '+':
+                case '+':
                         formula = new Formula<double>(cal.getSum);
                         break;
-                    case '-':
+                case '-':
                         formula = new Formula<double>(cal.getSub);
                         break;
-                    case '*':
+                case '*':
                         formula = new Formula<double>(cal.getMul);
                         break;
-                    case '/':
+                case '/':
                         formula = new Formula<double>(cal.getDivide);
                         break;
-                    default:
-                        throw new InvalidOperationException("Invalid operator.");
+                default:
+                    throw new InvalidOperationException("Invalid operator.");
 
                 }
                 cal.CalculateEvent += formula;
@@ -69,7 +69,8 @@ namespace CalculatorApplication
             catch (DivideByZeroException ex)
             {
                 MessageBox.Show(ex.Message);
+                }
             }
-        }
+
     }
 }
