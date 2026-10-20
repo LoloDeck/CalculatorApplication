@@ -40,13 +40,13 @@ namespace CalculatorApplication
                         formula = new Formula<double>(cal.getSum);
                         break;
                     case '-':
-                        formula = new Formula<double>(cal.getSub);
+                        formula = new Formula<double>(cal.getDifference);
                         break;
                     case '*':
-                        formula = new Formula<double>(cal.getMul);
+                        formula = new Formula<double>(cal.getProduct);
                         break;
                     case '/':
-                        formula = new Formula<double>(cal.getDivide);
+                        formula = new Formula<double>(cal.getQuotient);
                         break;
                     default:
                         throw new InvalidOperationException("Invalid operator.");

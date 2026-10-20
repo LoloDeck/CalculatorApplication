@@ -9,8 +9,8 @@ namespace CalculatorApplication
     public delegate T Formula<T>(T num1, T num2);
     class CalculatorClass
     {
-        public Formula<double> info ;
-
+        public Formula<double> info;
+        
         public event Formula<double> CalculateEvent
         {
             add 
@@ -29,15 +29,15 @@ namespace CalculatorApplication
         {
             return num1 + num2;
         }
-        public double getSub(double num1, double num2)
+        public double getDifference(double num1, double num2)
         {
             return num1 - num2;
         }
-        public double getMul(double num1, double num2)
+        public double getProduct(double num1, double num2)
         {
             return num1 * num2;
         }
-        public double getDivide(double num1, double num2)
+        public double getQuotient(double num1, double num2)
         {
             if (num2 != 0)
                 return num1 / num2;
